@@ -1,72 +1,79 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  TrendingUp, 
-  Users, 
-  MessageSquare, 
-  Clock, 
+import {
+  TrendingUp,
+  Users,
+  MessageSquare,
+  Clock,
   Activity,
   LogOut,
   Settings,
-  Shield
+  Shield,
 } from 'lucide-react';
+import Logo from '../../components/Logo';
+
+type DashboardStats = {
+  revenue: string;
+  inquiries: number;
+  atRisk: number;
+  hoursSaved: number;
+};
+
+const SAMPLE_STATS: DashboardStats = {
+  revenue: "₹15.2L",
+  inquiries: 124,
+  atRisk: 12,
+  hoursSaved: 47,
+};
 
 export default function OwnerDashboard() {
-  const [data, setData] = useState<any>(null);
-
-  useEffect(() => {
-    fetch('/api/stats')
-      .then((res) => res.json())
-      .then((json) => setData(json))
-      .catch((err) => console.error("Error fetching stats:", err));
-  }, []);
+  const data = SAMPLE_STATS;
 
   const stats = [
-    { 
-      label: "Active Revenue", 
-      value: data ? data.revenue : "---", 
-      growth: "+14%", 
-      icon: TrendingUp, 
-      color: "text-green-500" 
+    {
+      label: "Active Revenue",
+      value: data.revenue,
+      growth: "+14%",
+      icon: TrendingUp,
+      color: "text-green-500",
     },
-    { 
-      label: "New Inquiries", 
-      value: data ? data.inquiries : "---", 
-      growth: "24 new", 
-      icon: MessageSquare, 
-      color: "text-yellow-500" 
+    {
+      label: "New Inquiries",
+      value: data.inquiries,
+      growth: "24 new",
+      icon: MessageSquare,
+      color: "text-yellow-500",
     },
-    { 
-      label: "At-Risk Members", 
-      value: data ? data.atRisk : "---", 
-      growth: "-4", 
-      icon: Users, 
-      color: "text-red-500" 
+    {
+      label: "At-Risk Members",
+      value: data.atRisk,
+      growth: "-4",
+      icon: Users,
+      color: "text-red-500",
     },
-    { 
-      label: "AI Hours Saved", 
-      value: data ? `${data.hoursSaved}h` : "---", 
-      growth: "This month", 
-      icon: Clock, 
-      color: "text-blue-500" 
+    {
+      label: "AI Hours Saved",
+      value: `${data.hoursSaved}h`,
+      growth: "This month",
+      icon: Clock,
+      color: "text-blue-500",
     },
   ];
 
   return (
     <div className="flex min-h-screen bg-[#050505] text-white">
-      
+
       {/* SIDEBAR */}
-      <aside className="w-64 border-r border-white/10 p-6 flex flex-col hidden md:flex">
-        <div className="mb-12">
-          <img src="/gymnexai-logo.jpg" alt="Logo" className="h-8 w-auto object-contain" />
+      <aside className="w-64 border-r border-white/10 p-6 flex-col hidden md:flex">
+        <div className="mb-12 text-white">
+          <Logo size="sm" />
         </div>
-        
+
         <nav className="flex-1 space-y-2">
           {['Overview', 'Members', 'AI Chats', 'Payments'].map((item) => (
-            <button 
-              key={item} 
+            <button
+              key={item}
               className={`w-full text-left px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-widest transition-all ${
                 item === 'Overview' ? 'bg-white text-black' : 'text-gray-500 hover:text-white hover:bg-white/5'
               }`}
@@ -104,8 +111,8 @@ export default function OwnerDashboard() {
         {/* STATS GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {stats.map((stat, i) => (
-            <motion.div 
-              key={i}
+            <motion.div
+              key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
@@ -146,8 +153,8 @@ export default function OwnerDashboard() {
                 { user: "James W.", msg: "Asking about PT costs...", time: "2m ago" },
                 { user: "Sarah L.", msg: "Payment link sent.", time: "14m ago" },
                 { user: "Rahul M.", msg: "Workout plan updated.", time: "1h ago" },
-              ].map((chat, i) => (
-                <div key={i} className="flex items-center justify-between border-b border-white/5 pb-4">
+              ].map((chat) => (
+                <div key={chat.user} className="flex items-center justify-between border-b border-white/5 pb-4">
                   <div>
                     <p className="text-sm font-bold">{chat.user}</p>
                     <p className="text-xs text-gray-500">{chat.msg}</p>

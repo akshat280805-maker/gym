@@ -1,89 +1,142 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Shield, Lock, Mail, ArrowRight, Github } from 'lucide-react';
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowUpRight, Lock, Mail } from "lucide-react";
+import Logo from "../../components/Logo";
+
+const UNSPLASH = (id: string, w = 1600) =>
+  `https://images.unsplash.com/photo-${id}?w=${w}&q=80&auto=format&fit=crop`;
 
 export default function LoginPage() {
-  return (
-    <div className="min-h-screen bg-black text-white font-sans flex items-center justify-center px-6 relative overflow-hidden">
-      
-      {/* Background Decorative Glow */}
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-yellow-500/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-[120px]" />
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-md z-10"
-      >
-        {/* Logo Section */}
-        <div className="flex flex-col items-center mb-10">
-          <Link href="/">
-            <img src="/gymnexai-logo.jpg" alt="GymnexAI" className="h-12 w-auto mb-6 hover:scale-105 transition-transform" />
-          </Link>
-          <h2 className="text-2xl font-black uppercase tracking-tighter italic">Secure Access</h2>
-          <p className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.3em] mt-2 text-center">
-            GymnexAI Owner Command Center
+  return (
+    <div className="min-h-screen bg-paper text-ink grid grid-cols-1 lg:grid-cols-2">
+      {/* LEFT — editorial image */}
+      <div className="relative hidden lg:block">
+        <Image
+          src={UNSPLASH("1534438327276-14e5300c3a48", 1600)}
+          alt="Strength training"
+          fill
+          priority
+          sizes="50vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-tr from-ink/60 via-ink/20 to-transparent" />
+        <div className="absolute top-10 left-10 text-paper">
+          <Logo size="md" />
+        </div>
+        <div className="absolute bottom-12 left-12 right-12 text-paper">
+          <p className="font-serif text-3xl md:text-4xl leading-snug tracking-tight max-w-md">
+            &ldquo;The first software our members actually compliment us on.&rdquo;
+          </p>
+          <p className="mt-6 text-[11px] uppercase tracking-[0.25em] text-paper/70">
+            — Priya Raghavan, Atelier Athletic
           </p>
         </div>
+      </div>
 
-        {/* Login Card */}
-        <div className="bg-white/[0.03] border border-white/10 backdrop-blur-2xl rounded-[2.5rem] p-10 shadow-2xl">
-          <form className="space-y-6">
-            <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-4">Business Email</label>
-              <div className="relative">
-                <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                <input 
-                  type="email" 
-                  placeholder="admin@yourgym.com"
-                  className="w-full bg-black border border-white/10 rounded-full py-4 pl-14 pr-6 text-sm focus:outline-none focus:border-yellow-500 transition-all"
+      {/* RIGHT — login */}
+      <div className="flex items-center justify-center px-6 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="w-full max-w-md"
+        >
+          <div className="lg:hidden mb-10">
+            <Logo size="md" className="text-ink" />
+          </div>
+
+          <span className="text-[10px] uppercase tracking-[0.28em] font-semibold text-mute">
+            Owner Console
+          </span>
+          <h1 className="mt-4 font-serif text-5xl md:text-6xl leading-[0.95] tracking-tight">
+            Welcome back.
+          </h1>
+          <p className="mt-4 text-mute">
+            Access your gym&apos;s operating system.
+          </p>
+
+          <form
+            className="mt-10 space-y-6"
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (!email || !password) return;
+              setSubmitting(true);
+            }}
+          >
+            <div>
+              <label htmlFor="login-email" className="text-[10px] uppercase tracking-[0.25em] font-semibold text-mute">
+                Business Email
+              </label>
+              <div className="mt-3 relative">
+                <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-mute" />
+                <input
+                  id="login-email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@yourgym.com"
+                  className="w-full bg-paper border border-line rounded-full py-4 pl-12 pr-5 text-sm placeholder:text-mute-soft focus:outline-none focus:border-ink transition-colors"
                 />
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-4">Security Key</label>
-              <div className="relative">
-                <Lock className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                <input 
-                  type="password" 
+            <div>
+              <div className="flex items-center justify-between">
+                <label htmlFor="login-password" className="text-[10px] uppercase tracking-[0.25em] font-semibold text-mute">
+                  Password
+                </label>
+                <button
+                  type="button"
+                  className="text-[10px] uppercase tracking-[0.22em] font-semibold text-mute hover:text-ink"
+                >
+                  Forgot?
+                </button>
+              </div>
+              <div className="mt-3 relative">
+                <Lock className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-mute" />
+                <input
+                  id="login-password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full bg-black border border-white/10 rounded-full py-4 pl-14 pr-6 text-sm focus:outline-none focus:border-yellow-500 transition-all"
+                  className="w-full bg-paper border border-line rounded-full py-4 pl-12 pr-5 text-sm placeholder:text-mute-soft focus:outline-none focus:border-ink transition-colors"
                 />
               </div>
             </div>
 
-            <div className="flex justify-end px-4">
-              <button type="button" className="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">
-                Recover Access
-              </button>
-            </div>
-
-            <button className="w-full bg-white text-black py-4 rounded-full font-black uppercase text-sm tracking-widest hover:bg-yellow-500 hover:scale-[1.02] transition-all flex items-center justify-center group">
-              Initialize Dashboard <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <button
+              type="submit"
+              disabled={submitting}
+              className="group w-full bg-ink text-paper py-4 rounded-full text-[12px] font-semibold tracking-[0.22em] uppercase hover:bg-ink-soft transition-colors inline-flex items-center justify-center gap-3 disabled:opacity-60"
+            >
+              {submitting ? "Signing in…" : "Enter Console"}
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </form>
 
-          <div className="mt-8 pt-8 border-t border-white/5 flex flex-col items-center">
-            <p className="text-[9px] text-gray-600 font-bold uppercase tracking-widest mb-4 text-center">Authorized Integrations Only</p>
-            <div className="flex space-x-4">
-              <button className="p-3 bg-white/5 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
-                <Github className="w-5 h-5" />
-              </button>
-              <button className="p-3 bg-white/5 border border-white/10 rounded-full hover:bg-white hover:text-black transition-all">
-                <Shield className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <p className="text-center mt-8 text-[10px] text-gray-600 font-bold uppercase tracking-widest">
-          New to GymnexAI? <Link href="/contact" className="text-white hover:text-yellow-500 transition-colors">Apply for Access</Link>
-        </p>
-      </motion.div>
+          <p className="mt-10 text-[12px] text-mute text-center">
+            New to GymnexAI?{" "}
+            <Link href="/contact" className="text-ink underline underline-offset-4 decoration-line hover:decoration-ink">
+              Request access
+            </Link>
+          </p>
+        </motion.div>
+      </div>
     </div>
   );
 }

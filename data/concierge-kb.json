@@ -1,0 +1,281 @@
+{
+  "meta": {
+    "name": "GymnexAI Concierge",
+    "version": 2,
+    "updated": "2026-05-28",
+    "fallback": "I'm afraid that's outside what I'm trained on at the moment. The fastest answer would come from our team — a thirty-minute private demo is on the house. Would you like me to point you to it?",
+    "greeting": "Good day. I'm the GymnexAI Concierge — here to answer anything about the operating layer behind premium gyms. Ask, or pick a starting point below.",
+    "suggested": [
+      "What is GymnexAI?",
+      "How does retention work?",
+      "What does it cost?",
+      "How long is onboarding?",
+      "Which gyms do you serve?",
+      "Do you handle WhatsApp?"
+    ],
+    "teasers": [
+      "How does retention work?",
+      "What does it cost?",
+      "How long to go live?",
+      "Curious about WhatsApp?",
+      "Which gyms do you serve?"
+    ]
+  },
+  "entries": [
+    {
+      "id": "what-is-gymnexai",
+      "chip": "What is GymnexAI?",
+      "related": ["four-pillars", "outcomes", "demo"],
+      "questions": [
+        "What is GymnexAI?",
+        "What does GymnexAI do?",
+        "Tell me about GymnexAI",
+        "Explain GymnexAI to me",
+        "What is this product?"
+      ],
+      "keywords": ["what", "gymnexai", "about", "product", "platform", "describe", "overview", "company"],
+      "answer": "GymnexAI is the operating system for modern fitness businesses — a single, deliberate control room for retention, lead conversion, member experience, and day-to-day operations. We sit quietly behind premium gyms, studios and clubs, conducting the work so owners can focus on the craft of the floor."
+    },
+    {
+      "id": "four-pillars",
+      "chip": "The four pillars",
+      "related": ["retention-intelligence", "lead-conversion", "operations"],
+      "questions": [
+        "How does GymnexAI work?",
+        "What are the four pillars?",
+        "What are the core features?",
+        "What does the system include?",
+        "What modules does it have?"
+      ],
+      "keywords": ["how", "works", "pillars", "features", "modules", "components", "system", "movements"],
+      "answer": "The system is composed in four movements. I — Retention Intelligence: foresight before farewell. II — Lead Conversion: an always-on concierge that closes inquiries on WhatsApp, Instagram and SMS. III — Operations Atelier: members, billing, attendance and trainers in one command surface. IV — Member Experience: personal programming and recovery delivered through the channels members already trust."
+    },
+    {
+      "id": "retention-intelligence",
+      "chip": "Retention intelligence",
+      "related": ["outcomes", "ai-voice", "demo"],
+      "questions": [
+        "How does retention intelligence work?",
+        "How do you predict churn?",
+        "How do you stop members from leaving?",
+        "Can you reduce attrition?",
+        "How do you identify at-risk members?"
+      ],
+      "keywords": ["retention", "churn", "attrition", "leave", "leaving", "drop", "dropoff", "risk", "predict", "intelligence"],
+      "answer": "We read the quiet signals — missed sessions, softer engagement, billing friction, declining check-in cadence — and surface members drifting toward goodbye weeks before they cancel. The system then drafts a personal, on-brand outreach in your house voice. On average, operators see a 44% reduction in monthly attrition within the first quarter."
+    },
+    {
+      "id": "lead-conversion",
+      "chip": "Lead conversion",
+      "related": ["whatsapp", "ai-voice", "onboarding"],
+      "questions": [
+        "How do you handle leads?",
+        "How does lead conversion work?",
+        "What about Instagram and WhatsApp inquiries?",
+        "Can you reply to leads after hours?",
+        "Do you book trials automatically?"
+      ],
+      "keywords": ["lead", "leads", "inquiry", "inquiries", "conversion", "convert", "trial", "tour", "instagram", "whatsapp", "reply", "responds", "concierge"],
+      "answer": "Every inquiry — WhatsApp, Instagram DM, web form, missed call — receives a considered, immediate reply in your house voice. Tours scheduled, trials confirmed, objections handled, day or night. Median response time is under two minutes, twenty-four hours a day. Operators typically see lead → trial conversion lift by 62%."
+    },
+    {
+      "id": "whatsapp",
+      "chip": "WhatsApp",
+      "related": ["lead-conversion", "multilingual", "ai-voice"],
+      "questions": [
+        "Do you support WhatsApp?",
+        "How does WhatsApp work with GymnexAI?",
+        "Is WhatsApp integration native?",
+        "Can members message us on WhatsApp?",
+        "Is this a WhatsApp CRM?"
+      ],
+      "keywords": ["whatsapp", "wa", "messaging", "chat", "concierge", "channel"],
+      "answer": "WhatsApp is the heart of the experience. We connect to the official WhatsApp Business API — verified sender, green-tick eligible — so every conversation, inbound or automated, runs through your verified number. Members and leads message you as they would a friend; the system replies with the same warmth, in your voice."
+    },
+    {
+      "id": "operations",
+      "chip": "Operations atelier",
+      "related": ["integrations", "multi-location", "pricing"],
+      "questions": [
+        "What does the operations dashboard show?",
+        "How do you handle billing?",
+        "Can you manage members and attendance?",
+        "Do you replace my current CRM?",
+        "What does the control room look like?"
+      ],
+      "keywords": ["operations", "dashboard", "billing", "payments", "attendance", "members", "crm", "control", "room", "atelier", "manage", "management"],
+      "answer": "One command surface. Members, recurring payments, attendance, trainers, classes, leads, retention and revenue health — composed in a single deliberate dashboard. Most operators retire three to five separate tools in their first month. The data finally lives in one place, and so does the decision."
+    },
+    {
+      "id": "member-experience",
+      "chip": "Member experience",
+      "related": ["ai-voice", "multilingual", "retention-intelligence"],
+      "questions": [
+        "What is the member experience like?",
+        "Do members get an app?",
+        "Do you offer coaching?",
+        "What about personal programming?",
+        "What do members actually see?"
+      ],
+      "keywords": ["member", "experience", "app", "coaching", "programming", "nutrition", "recovery", "pocket", "client"],
+      "answer": "A coach in every pocket — without another app to download. Personal programming, recovery nudges, nutrition guidance and ritual reminders arrive on WhatsApp, delivered with restraint and in your studio's voice. Members keep using the channel they already trust; the intelligence happens quietly underneath."
+    },
+    {
+      "id": "pricing",
+      "chip": "Pricing",
+      "related": ["onboarding", "demo", "who-is-it-for"],
+      "questions": [
+        "What does GymnexAI cost?",
+        "How much is GymnexAI?",
+        "What is the pricing?",
+        "Tell me about pricing",
+        "Is there a monthly fee?",
+        "Is it subscription based?"
+      ],
+      "keywords": ["price", "pricing", "cost", "expensive", "cheap", "monthly", "fee", "subscription", "plan", "plans", "how much", "rates"],
+      "answer": "Pricing is composed around your operation — single location, multi-studio group, or franchise — and scales with active members. Most boutique operators land between ₹24,000 and ₹85,000 per month, with no per-seat fees for staff. We share a clean, single-page quote during your private demo. No long contracts; cancel any month."
+    },
+    {
+      "id": "onboarding",
+      "chip": "Onboarding timeline",
+      "related": ["pricing", "integrations", "demo"],
+      "questions": [
+        "How long does onboarding take?",
+        "How quickly can we go live?",
+        "What does setup look like?",
+        "How do you migrate our data?",
+        "When can we start?"
+      ],
+      "keywords": ["onboard", "onboarding", "setup", "start", "live", "deploy", "deployment", "migrate", "migration", "transition", "implementation", "implement", "fast", "quick"],
+      "answer": "Most studios are live in seven to ten days. Our team handles data migration from your existing CRM or spreadsheets, verifies your WhatsApp Business number, calibrates the house voice with your founder, and trains the retention models on your last twelve months of activity. You're operating without us inside two weeks."
+    },
+    {
+      "id": "who-is-it-for",
+      "chip": "Who it's for",
+      "related": ["multi-location", "outcomes", "pricing"],
+      "questions": [
+        "Who is GymnexAI for?",
+        "Which gyms do you serve?",
+        "Is this for small studios or chains?",
+        "Do you work with boutique gyms?",
+        "Is this for franchises?"
+      ],
+      "keywords": ["who", "for", "fit", "studio", "boutique", "chain", "franchise", "club", "gym", "gyms", "size", "serve", "ideal", "right"],
+      "answer": "We're composed for considered fitness brands — boutique studios, premium gyms, performance clubs and multi-location groups that value craft over commodity. Operators typically run between 150 and 4,000 active members. If your members would notice a clumsy SMS, GymnexAI is built for you."
+    },
+    {
+      "id": "data-privacy",
+      "chip": "Data & privacy",
+      "related": ["integrations", "team", "demo"],
+      "questions": [
+        "Is my data safe?",
+        "How do you handle privacy?",
+        "Where is data stored?",
+        "Are you GDPR compliant?",
+        "Who can see member information?",
+        "Is GymnexAI secure?"
+      ],
+      "keywords": ["data", "privacy", "security", "secure", "safe", "gdpr", "dpdp", "compliance", "compliant", "storage", "encrypted", "encryption"],
+      "answer": "Member data is encrypted at rest and in transit, stored in regional zones (Mumbai for India, Frankfurt for EU, Virginia for US) and never shared, sold or used to train external models. We are SOC 2 Type II in progress, DPDP-aligned in India, and GDPR-compliant for European clients. Your data remains your data."
+    },
+    {
+      "id": "integrations",
+      "chip": "Integrations",
+      "related": ["operations", "onboarding", "multi-location"],
+      "questions": [
+        "What does GymnexAI integrate with?",
+        "Do you connect to my existing tools?",
+        "Can you work with my current software?",
+        "Do you support Mindbody?",
+        "What integrations exist?"
+      ],
+      "keywords": ["integrate", "integration", "integrations", "connect", "tools", "stack", "mindbody", "stripe", "razorpay", "zapier", "calendar", "google", "existing"],
+      "answer": "Native connectors include Stripe, Razorpay, GoCardless, Google Calendar, Mindbody, Glofox, ABC Fitness, Meta (Instagram + WhatsApp Business), Apple Wallet pass, and webhooks for everything else. Most operators replace three to five tools; for what stays, we sync cleanly through API or Zapier."
+    },
+    {
+      "id": "multilingual",
+      "chip": "Languages",
+      "related": ["ai-voice", "member-experience", "whatsapp"],
+      "questions": [
+        "What languages do you support?",
+        "Can you reply in Hindi or Spanish?",
+        "Is GymnexAI multilingual?",
+        "Does it speak other languages?",
+        "Can it operate in multiple languages?"
+      ],
+      "keywords": ["language", "languages", "multilingual", "hindi", "spanish", "tamil", "arabic", "french", "german", "english", "translate", "translation"],
+      "answer": "The system replies natively in English, Hindi, Tamil, Spanish, French, German, Portuguese and Arabic, and detects the language of the inbound message automatically. Voice and tone are calibrated per language so a Hindi reply sounds like your studio's Hindi, not a translation."
+    },
+    {
+      "id": "multi-location",
+      "chip": "Multi-location",
+      "related": ["operations", "who-is-it-for", "pricing"],
+      "questions": [
+        "Can it run multiple locations?",
+        "Do you support chains?",
+        "How does multi-studio work?",
+        "Can I manage several gyms?",
+        "Does it work across cities?"
+      ],
+      "keywords": ["multi", "multiple", "locations", "chains", "studios", "branches", "cities", "outlets", "franchise", "group"],
+      "answer": "Yes. Multi-location operators get a group view across every studio — revenue, retention and pipeline — with the ability to drill into any single location. House voice can stay unified across the group or be tuned per location. Staff permissions are scoped by studio."
+    },
+    {
+      "id": "team",
+      "chip": "Who's behind it",
+      "related": ["demo", "outcomes", "what-is-gymnexai"],
+      "questions": [
+        "Who founded GymnexAI?",
+        "Who is behind GymnexAI?",
+        "Tell me about the team",
+        "Who built this?",
+        "Where are you based?"
+      ],
+      "keywords": ["team", "founder", "founded", "behind", "built", "based", "company", "leadership", "akshat", "chauhan"],
+      "answer": "GymnexAI was founded in Bengaluru in MMXXIV by Akshat Chauhan. The team comes from the intersection of AI research, fitness operations and editorial design — building software that reads as quietly considered as the studios it serves."
+    },
+    {
+      "id": "demo",
+      "chip": "Book a demo",
+      "related": ["pricing", "onboarding", "outcomes"],
+      "questions": [
+        "How do I book a demo?",
+        "Can I see GymnexAI in action?",
+        "How do I get started?",
+        "Can I try it?",
+        "How do I contact sales?",
+        "How do I talk to your team?"
+      ],
+      "keywords": ["demo", "book", "trial", "try", "start", "started", "contact", "sales", "talk", "speak", "schedule", "call"],
+      "answer": "A thirty-minute private demo is the most direct path — composed around your operation, with no pitch deck. We walk you through the system, your data, and what the next quarter could look like. You can request one at /contact, or tell me a little about your studio and I'll guide you there."
+    },
+    {
+      "id": "outcomes",
+      "chip": "Outcomes",
+      "related": ["demo", "retention-intelligence", "who-is-it-for"],
+      "questions": [
+        "What results do operators see?",
+        "What outcomes can I expect?",
+        "Do you have proof?",
+        "Show me numbers",
+        "What is the ROI?"
+      ],
+      "keywords": ["outcome", "outcomes", "results", "proof", "evidence", "roi", "return", "metrics", "numbers", "stats", "lift", "improvement"],
+      "answer": "Across the operators we work with: +62% lead → trial conversion, −44% monthly member attrition, 11 hours reclaimed per owner per week, and a median reply time under two minutes, day or night. Case studies for Atelier Athletic and others are in /blog."
+    },
+    {
+      "id": "ai-voice",
+      "chip": "Brand voice",
+      "related": ["multilingual", "lead-conversion", "member-experience"],
+      "questions": [
+        "Does the AI sound generic?",
+        "How is the voice calibrated?",
+        "Will it sound like a robot?",
+        "Can you match our brand voice?",
+        "Is the writing customisable?"
+      ],
+      "keywords": ["voice", "tone", "brand", "robot", "generic", "sound", "writing", "language", "personality", "style"],
+      "answer": "The house voice is calibrated to your studio in a single working session with your founder. We capture cadence, vocabulary, the small house phrases — and the system writes inside that voice. Members tell operators they cannot tell which messages were composed by the system and which by the front desk. That is the point."
+    }
+  ]
+}

@@ -1,28 +1,158 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-paper: #faf9f6;
+  --color-paper-warm: #f3efe6;
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #1a1a1a;
+  --color-mute: #6b6b66;
+  --color-mute-soft: #a8a8a0;
+  --color-line: #e6e3da;
+  --color-line-soft: #eeece4;
+  --color-lime: #d4ff3a;
+  --color-lime-soft: #eafcaf;
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-display), "GT Sectra", Georgia, "Times New Roman", serif;
 }
 
-@layer root {
-  :root {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
-  }
+/* Display headlines — Instrument Serif.
+   - Tight optical tracking at hero sizes for that "quiet-luxury" editorial feel
+   - "liga" + "calt" preserve the sharp terminals and elegant joins
+   - "kern" gives the metal-set kerning Instrument Serif was designed around */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-feature-settings: "liga", "calt", "kern";
+  letter-spacing: -0.022em;
+  font-weight: 400;
+}
+.font-display em,
+.font-display .italic {
+  font-style: italic;
+  letter-spacing: -0.015em;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Body text — Inter Tight, with the OpenType features that give it its
+   premium SaaS rhythm: contextual alternates, tabular figures off by default,
+   single-storey 'a' via cv11, and slashed zero via ss01. */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv11", "ss01", "calt";
+  letter-spacing: -0.011em;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-paper);
+  color-scheme: light;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Keyboard focus rings — only show on keyboard nav, not mouse clicks */
+*:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Don't double-ring native rounded controls */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-offset: 3px;
+}
+
+/* Marquee */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 45s linear infinite;
+}
+
+/* Subtle floating motion for hero badges */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+.animate-floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* Slow Ken Burns — gives a still photo cinematic life.
+   Used on the hero poster so the section feels alive even before
+   /videos/hero.mp4 is dropped in. */
+@keyframes kenburns {
+  0%   { transform: scale(1.0)   translate3d(0, 0, 0); }
+  50%  { transform: scale(1.08) translate3d(-1%, -1%, 0); }
+  100% { transform: scale(1.0)   translate3d(0, 0, 0); }
+}
+.animate-kenburns {
+  animation: kenburns 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Slower, more cinematic ken-burns for the hero reel — each frame
+   lives ~4.8s, so a 12s loop gives a graceful drift inside its window. */
+@keyframes kenburns-slow {
+  0%   { transform: scale(1.05) translate3d(0, 0, 0); }
+  100% { transform: scale(1.14) translate3d(-1.5%, -1%, 0); }
+}
+.animate-kenburns-slow {
+  animation: kenburns-slow 12s ease-out forwards;
+  will-change: transform;
+}
+
+/* Slow horizontal drift — used on the lime hero hairline */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-shimmer {
+  animation: shimmer 8s linear infinite;
+}
+
+/* Editorial scroll cue — subtle vertical pulse line */
+@keyframes pulse-line {
+  0%   { transform: scaleY(0.3); opacity: 0.4; }
+  50%  { transform: scaleY(1);   opacity: 1;   }
+  100% { transform: scaleY(0.3); opacity: 0.4; }
+}
+.animate-pulse-line {
+  animation: pulse-line 2.4s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-floaty,
+  .animate-kenburns,
+  .animate-kenburns-slow,
+  .animate-shimmer,
+  .animate-pulse-line {
+    animation: none;
+  }
+}
+
+/* Marker underline used by inline accents */
+.mark-lime {
+  background-image: linear-gradient(180deg, transparent 62%, var(--color-lime) 62%, var(--color-lime) 92%, transparent 92%);
+}
+
+/* Editorial scroll number */
+.editorial-num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
 }
