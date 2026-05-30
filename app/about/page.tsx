@@ -102,7 +102,7 @@ export default function AboutPage() {
 
                 {/* Subtle masthead chip — sits clear of the face */}
                 <div className="absolute top-5 left-5 z-20 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-paper/90 backdrop-blur text-[10px] uppercase tracking-[0.28em] font-semibold text-ink">
-                  <span className="w-1 h-1 rounded-full bg-lime" />
+                  <span className="w-1 h-1 rounded-full bg-mute-soft" />
                   Founder
                 </div>
               </div>
@@ -198,15 +198,15 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <Reveal>
             <div className="relative overflow-hidden rounded-[2.5rem] bg-ink text-paper p-12 md:p-20">
-              <div className="absolute -top-20 -left-20 w-[420px] h-[420px] rounded-full bg-lime/15 blur-3xl" />
+              <div className="absolute -top-20 -left-20 w-[420px] h-[420px] rounded-full bg-gradient-to-br from-charcoal/10 to-transparent blur-3xl" />
               <div className="relative">
-                <Quote className="w-8 h-8 text-lime fill-lime" />
+                <Quote className="w-8 h-8 text-mute-soft" />
                 <p className="mt-8 max-w-4xl font-serif text-3xl md:text-5xl leading-[1.05] tracking-tight">
-                  <span className="text-paper/50">Our mission —</span>{" "}
+                  <span className="text-mute">Our mission —</span>{" "}
                   Help fitness businesses{" "}
-                  <em className="italic text-lime">retain</em> more members,{" "}
-                  <em className="italic text-lime">convert</em> more leads, and{" "}
-                  <em className="italic text-lime">grow</em> through intelligent
+                  <em className="italic text-paper">retain</em> more members,{" "}
+                  <em className="italic text-paper">convert</em> more leads, and{" "}
+                  <em className="italic text-paper">grow</em> through intelligent
                   systems that work in the background.
                 </p>
               </div>

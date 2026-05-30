@@ -20,8 +20,8 @@ export default function LoginPage() {
       {/* LEFT — editorial image */}
       <div className="relative hidden lg:block">
         <Image
-          src={UNSPLASH("1534438327276-14e5300c3a48", 1600)}
-          alt="Strength training"
+          src="/images/system/login-owner-console.png"
+          alt="Welcoming premium fitness studio reception"
           fill
           priority
           sizes="50vw"
@@ -31,18 +31,10 @@ export default function LoginPage() {
         <div className="absolute top-10 left-10 text-paper">
           <Logo size="md" />
         </div>
-        <div className="absolute bottom-12 left-12 right-12 text-paper">
-          <p className="font-serif text-3xl md:text-4xl leading-snug tracking-tight max-w-md">
-            &ldquo;The first software our members actually compliment us on.&rdquo;
-          </p>
-          <p className="mt-6 text-[11px] uppercase tracking-[0.25em] text-paper/70">
-            — Priya Raghavan, Atelier Athletic
-          </p>
-        </div>
       </div>
 
       {/* RIGHT — login */}
-      <div className="flex items-center justify-center px-6 py-20">
+      <div className="flex items-start justify-center px-6 pt-32 pb-20 lg:pt-[180px]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,10 +45,7 @@ export default function LoginPage() {
             <Logo size="md" className="text-ink" />
           </div>
 
-          <span className="text-[10px] uppercase tracking-[0.28em] font-semibold text-mute">
-            Owner Console
-          </span>
-          <h1 className="mt-4 font-serif text-5xl md:text-6xl leading-[0.95] tracking-tight">
+          <h1 className="font-serif text-5xl md:text-6xl leading-[0.95] tracking-tight">
             Welcome back.
           </h1>
           <p className="mt-4 text-mute">

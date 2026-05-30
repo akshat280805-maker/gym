@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowUp, X } from "lucide-react";
 import { KB, answer, type ConciergeEntry } from "../lib/concierge";
@@ -13,7 +14,7 @@ import { KB, answer, type ConciergeEntry } from "../lib/concierge";
  *  - Floating bubble is a single ink disc with an italic serif "g." mark.
  *    A one-time teaser pill expands from it ~6s after first paint, holds for
  *    ~4.5s, then collapses back to the disc.
- *  - Panel is paper with a single lime hairline at the top edge. The only
+ *  - Panel is paper with a subtle soft-grey border at the top edge. The only
  *    header element is the title in italic Instrument Serif.
  *  - Each concierge reply carries 2–3 contextual follow-up chips, derived
  *    from the matched entry's `related` ids in the KB. The starter chips
@@ -39,6 +40,7 @@ const TEASER_DELAY_MS = 6000;
 const TEASER_DURATION_MS = 4500;
 
 export default function Concierge() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState("");
   const [thinking, setThinking] = useState(false);
@@ -120,6 +122,8 @@ export default function Concierge() {
     if (open && teaser) setTeaser(null);
   }, [open, teaser]);
 
+  if (pathname === "/") return null;
+
   function ask(text: string) {
     const trimmed = text.trim();
     if (!trimmed || thinking) return;
@@ -169,19 +173,19 @@ export default function Concierge() {
               aria-label="Open the GymnexAI Concierge"
               layout
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative flex items-center bg-ink text-paper rounded-full shadow-[0_18px_60px_-18px_rgba(10,10,10,0.6)] hover:shadow-[0_22px_70px_-18px_rgba(10,10,10,0.7)] transition-shadow overflow-hidden"
+              className="group relative flex items-center bg-ink text-paper rounded-full shadow-[0_18px_60px_-18px_rgba(10,10,10,0.6)] hover:shadow-[0_22px_70px_-18px_rgba(10,10,10,0.7)] transition-shadow overflow-hidden hover:-translate-y-0.5 duration-300"
             >
               {/* The disc — italic serif mark */}
               <motion.span
                 layout
                 className="relative flex items-center justify-center w-14 h-14 shrink-0"
               >
-                <span className="font-display italic text-lime text-[26px] leading-none translate-y-[-1px]">
+                <span className="font-display italic text-mute-soft text-[26px] leading-none translate-y-[-1px]">
                   g.
                 </span>
                 <span className="absolute top-2 right-2 flex w-2 h-2">
-                  <span className="absolute inset-0 rounded-full bg-lime animate-ping opacity-70" />
-                  <span className="relative w-2 h-2 rounded-full bg-lime" />
+                  <span className="absolute inset-0 rounded-full bg-mute-soft animate-ping opacity-50" />
+                  <span className="relative w-2 h-2 rounded-full bg-mute-soft" />
                 </span>
               </motion.span>
 
@@ -221,8 +225,8 @@ export default function Concierge() {
             aria-modal="false"
             aria-label="GymnexAI Concierge"
           >
-            {/* Lime hairline at top edge */}
-            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-lime/55 to-transparent z-10" />
+            {/* Soft grey border at top edge */}
+            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-mute-soft/25 to-transparent z-10" />
 
             {/* Header — title + close, nothing else */}
             <div className="px-6 pt-6 pb-4 flex items-center justify-between">

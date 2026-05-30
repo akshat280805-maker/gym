@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import Logo from "./Logo";
 
 /**
  * Adaptive navbar.
@@ -34,6 +33,7 @@ export default function Navbar() {
     { href: "/#problem", label: "The Problem" },
     { href: "/about", label: "About" },
     { href: "/blog", label: "Case Studies" },
+    { href: "/pricing", label: "Pricing" },
   ];
 
   const overDark = pathname === "/" && !scrolled;
@@ -42,16 +42,24 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-paper/85 backdrop-blur-xl border-b border-line"
-          : "bg-transparent border-b border-transparent"
+          ? "bg-paper/90 backdrop-blur-xl border-b border-line"
+          : "bg-ink/10 backdrop-blur-2xl"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Logo size="md" className={overDark ? "text-paper" : "text-ink"} />
+      <div className="max-w-7xl mx-auto px-6 md:px-8 h-16 md:h-20 lg:h-24 flex items-center justify-between">
+        <Link href="/" className="inline-flex items-center pl-2">
+          <span
+            className={`font-display uppercase tracking-[0.28em] font-semibold leading-none pr-2 ${
+              overDark ? "text-paper" : "text-ink"
+            } text-[15px] md:text-[18px] lg:text-[20px]`}
+          >
+            GYMNEXAI
+          </span>
+        </Link>
 
         <div
-          className={`hidden md:flex items-center gap-10 text-[11px] tracking-[0.22em] uppercase font-medium transition-colors duration-500 ${
-            overDark ? "text-paper/70" : "text-mute"
+          className={`hidden md:flex items-center gap-10 text-[11px] tracking-[0.24em] uppercase font-medium transition-colors duration-500 ${
+            overDark ? "text-paper/80" : "text-ink/70"
           }`}
         >
           {navLinks.map((l) => (
@@ -68,7 +76,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/login"
-            className={`text-[11px] uppercase tracking-[0.22em] font-medium transition-colors duration-500 ${
+            className={`text-[11px] uppercase tracking-[0.22em] font-medium transition-all duration-300 ${
               overDark ? "text-paper/70 hover:text-paper" : "text-mute hover:text-ink"
             }`}
           >
@@ -76,13 +84,13 @@ export default function Navbar() {
           </Link>
           <Link
             href="/contact"
-            className={`px-5 py-2.5 rounded-full text-[11px] font-semibold tracking-[0.22em] uppercase transition-colors duration-500 ${
+            className={`inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-[11px] font-semibold tracking-[0.24em] uppercase transition-all duration-300 border ${
               overDark
-                ? "bg-paper text-ink hover:bg-paper-warm"
-                : "bg-ink text-paper hover:bg-ink-soft"
+                ? "bg-paper/95 text-ink border-paper/20 hover:bg-paper hover:-translate-y-0.5"
+                : "bg-ink text-paper border-paper/15 hover:bg-ink/90 hover:-translate-y-0.5"
             }`}
           >
-            Book a Demo
+            BOOK A DEMO
           </Link>
         </div>
 

@@ -29,7 +29,7 @@ type MarkProps = {
   accent?: boolean;
 };
 
-export function LogoMark({ size = 32, className, accent = true }: MarkProps) {
+export function LogoMark({ size = 32, className, accent = false }: MarkProps) {
   return (
     <svg
       viewBox="0 0 40 40"
@@ -48,17 +48,17 @@ export function LogoMark({ size = 32, className, accent = true }: MarkProps) {
         strokeWidth="1"
         opacity="0.35"
       />
-      {/* Inner G — confident, near-closed terminator */}
+      {/* Inner G — precision motion and system intelligence */}
       <path
-        d="M 28 12 A 10 10 0 1 0 28 28 L 28 21 L 22 21"
+        d="M 26 12 A 8 8 0 1 0 26 28 H 20 V 22 H 26"
         fill="none"
         stroke="currentColor"
         strokeWidth="2.25"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      {/* Precision dot — the "AI" reference */}
-      <circle cx="22" cy="21" r="2.1" fill={accent ? LIME : "currentColor"} />
+      {/* Signal node — the AI reference */}
+      <circle cx="26" cy="14" r="1.7" fill={accent ? LIME : "currentColor"} />
     </svg>
   );
 }
@@ -66,10 +66,9 @@ export function LogoMark({ size = 32, className, accent = true }: MarkProps) {
 export function LogoWordmark({ className }: { className?: string }) {
   return (
     <span
-      className={`font-display inline-flex items-baseline leading-none ${className ?? ""}`}
+      className={`font-display uppercase tracking-[0.28em] font-semibold leading-none ${className ?? ""}`}
     >
-      <span>Gymnex</span>
-      <span className="italic">AI</span>
+      GYMNEXAI
     </span>
   );
 }
@@ -84,8 +83,8 @@ type LockupProps = {
 
 const SIZE_MAP: Record<NonNullable<LockupProps["size"]>, { mark: number; text: string; gap: string }> = {
   sm: { mark: 24, text: "text-[22px]", gap: "gap-2.5" },
-  md: { mark: 30, text: "text-[26px]", gap: "gap-3" },
-  lg: { mark: 44, text: "text-[42px]", gap: "gap-4" },
+  md: { mark: 30, text: "text-[26px]", gap: "gap-2.5" },
+  lg: { mark: 44, text: "text-[42px]", gap: "gap-3" },
 };
 
 export default function Logo({

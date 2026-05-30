@@ -9,6 +9,9 @@ const UNSPLASH = (id: string, w = 1600) =>
   `https://images.unsplash.com/photo-${id}?w=${w}&q=80&auto=format&fit=crop`;
 const DEFAULT_COVER = "1517836357463-d25dfeac3438";
 
+const getCover = (cover?: string, w = 1600) =>
+  cover?.startsWith("/") ? cover : UNSPLASH(cover ?? DEFAULT_COVER, w);
+
 export async function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
 }
@@ -22,7 +25,7 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return {};
   const url = `/blog/${slug}`;
-  const cover = UNSPLASH(post.frontmatter.cover ?? DEFAULT_COVER, 1800);
+  const cover = getCover(post.frontmatter.cover, 1800);
   return {
     title: post.frontmatter.title,
     description: post.frontmatter.description,
@@ -58,7 +61,7 @@ export default async function BlogPostPage({
 
   const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://gymnex.ai";
   const url = `${SITE}/blog/${slug}`;
-  const cover = UNSPLASH(frontmatter.cover ?? DEFAULT_COVER, 1800);
+  const cover = getCover(frontmatter.cover, 1800);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -129,14 +132,14 @@ export default async function BlogPostPage({
 
       <section className="px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-[2rem] border border-line">
+          <div className="group relative aspect-[16/9] overflow-hidden rounded-[2rem] border border-line transition-transform duration-1000 ease-out hover:-translate-y-0.5">
             <Image
-              src={UNSPLASH(frontmatter.cover ?? DEFAULT_COVER, 1800)}
+              src={cover}
               alt={frontmatter.title}
               fill
               priority
               sizes="(min-width: 1024px) 60vw, 100vw"
-              className="object-cover"
+              className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02]"
             />
           </div>
         </div>
@@ -152,7 +155,7 @@ export default async function BlogPostPage({
       <section className="px-6 pb-32">
         <div className="max-w-3xl mx-auto rounded-[2rem] bg-ink text-paper p-10 md:p-14 text-center">
           <h3 className="font-serif text-3xl md:text-4xl leading-tight tracking-tight">
-            See what GymnexAI can do for <em className="italic text-lime">your gym.</em>
+            See what GymnexAI can do for <em className="italic text-paper/80">your gym.</em>
           </h3>
           <Link
             href="/contact"

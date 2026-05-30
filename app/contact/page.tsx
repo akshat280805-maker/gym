@@ -39,29 +39,31 @@ export default function ContactPage() {
 
             <div className="mt-12 relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-line">
               <Image
-                src={UNSPLASH("1540497077202-7c8a3999166f", 1200)}
-                alt="Boutique gym floor"
+                src="/images/system/book-demo-premium-gym-consultation.png"
+                alt="Premium gym owner reviewing a private GymnexAI demo"
                 fill
                 sizes="(min-width: 1024px) 35vw, 100vw"
                 className="object-cover"
               />
             </div>
 
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <Mail className="w-4 h-4 text-ink" />
                 <p className="mt-3 text-[10px] uppercase tracking-[0.22em] font-semibold text-mute">Email</p>
-                <p className="mt-1 text-sm">team@gymnex.ai</p>
-              </div>
-              <div>
-                <Phone className="w-4 h-4 text-ink" />
-                <p className="mt-3 text-[10px] uppercase tracking-[0.22em] font-semibold text-mute">WhatsApp</p>
-                <p className="mt-1 text-sm">+91 90000 00000</p>
+                <div className="mt-1 text-sm space-y-1">
+                  <a href="mailto:gymnexai@gmail.com" className="block text-sm text-ink hover:underline">
+                    gymnexai@gmail.com
+                  </a>
+                  <a href="mailto:info@thehyperaura.com" className="block text-sm text-ink hover:underline">
+                    info@thehyperaura.com
+                  </a>
+                </div>
               </div>
               <div>
                 <MapPin className="w-4 h-4 text-ink" />
                 <p className="mt-3 text-[10px] uppercase tracking-[0.22em] font-semibold text-mute">HQ</p>
-                <p className="mt-1 text-sm">Bengaluru · Remote-first</p>
+                <p className="mt-1 text-sm">California, USA</p>
               </div>
             </div>
           </motion.div>
@@ -76,7 +78,7 @@ export default function ContactPage() {
             <div className="sticky top-32 p-8 md:p-12 rounded-[2rem] bg-paper-warm/50 border border-line">
               {submitted ? (
                 <div className="py-16 text-center">
-                  <div className="mx-auto w-12 h-12 rounded-full bg-lime flex items-center justify-center">
+                  <div className="mx-auto w-12 h-12 rounded-full bg-mute-soft flex items-center justify-center">
                     <Check className="w-5 h-5 text-ink" />
                   </div>
                   <h2 className="mt-6 font-serif text-4xl md:text-5xl tracking-tight">
@@ -99,15 +101,15 @@ export default function ContactPage() {
                   </h2>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Field name="fullName" label="Full Name" placeholder="Priya Raghavan" required />
-                    <Field name="role" label="Role" placeholder="Owner · GM · Operations" />
+                    <Field name="fullName" label="Full Name" placeholder="Michael Carter" required />
+                    <Field name="role" label="Role" placeholder="Owner / General Manager" />
                   </div>
 
-                  <Field name="gym" label="Gym / Studio Name" placeholder="Atelier Athletic" required />
+                  <Field name="gym" label="Gym / Studio Name" placeholder="IronHouse Fitness" required />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Field name="whatsapp" label="WhatsApp Number" placeholder="+91 00000 00000" required />
-                    <Field name="email" label="Business Email" type="email" placeholder="you@yourgym.com" required />
+                    <Field name="whatsapp" label="WhatsApp Number" placeholder="+1 (555) 013-4920" required />
+                    <Field name="email" label="Business Email" type="email" placeholder="owner@yourstudio.com" required />
                   </div>
 
                   <div>

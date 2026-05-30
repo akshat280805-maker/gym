@@ -25,42 +25,42 @@ const modules = [
     tag: "WhatsApp AI",
     title: "Autonomous member concierge.",
     body: "A 24/7 digital teammate that answers diet questions, schedules tours, recovers payments and re-engages drifting members — in your voice, on the channel members already use.",
-    image: UNSPLASH("1556761175-5973dc0f32e7"),
+    image: "/images/system/autonomous-member-concierge.png",
   },
   {
     icon: LineChart,
     tag: "Retention Intelligence",
     title: "Predictive churn signal.",
     body: "GymnexAI watches attendance cadence, payment health and engagement decay — surfacing the 12 members most likely to leave this week, with a single-tap recovery flow.",
-    image: UNSPLASH("1551288049-bebda4e38f71"),
+    image: "/images/system/predictive-churn-signal-dashboard.png",
   },
   {
     icon: Cog,
     tag: "Operations OS",
     title: "One command surface.",
     body: "Trainers, classes, locations, attendance and contracts — unified. Replace eleven tools with one elegant control room your team will actually open every morning.",
-    image: UNSPLASH("1581009146145-b5ef050c2e1e"),
+    image: "/images/system/operations-os-role-access-hub.png",
   },
   {
     icon: CreditCard,
     tag: "Zero-Friction Billing",
     title: "Subscriptions that just work.",
     body: "Auto-debit, dunning, failed-payment recovery, upgrades, freezes and refunds — handled. Operators stop being collections agents.",
-    image: UNSPLASH("1554224155-1696413565d3"),
+    image: "/images/system/zero-friction-billing-whatsapp-reminder.png",
   },
   {
     icon: MessageCircle,
     tag: "Lead Conversion",
     title: "Inbox-to-trial in minutes.",
     body: "Inquiries from Instagram, the website, walk-ins and referrals are unified, qualified, and converted — with a personal reply within minutes, day or night.",
-    image: UNSPLASH("1517649763962-0c623066013b"),
+    image: "/images/system/lead-conversion-whatsapp-chat.png",
   },
   {
     icon: Sparkles,
     tag: "Member Experience",
     title: "Programming, personalised.",
     body: "Plans that adapt to attendance, recovery and goals. Members feel seen — without anyone on your team writing a single template.",
-    image: UNSPLASH("1517836357463-d25dfeac3438"),
+    image: "/images/system/member-experience-personalised-programming.png",
   },
 ];
 
@@ -69,7 +69,6 @@ export default function FeaturesPage() {
     <div className="bg-paper text-ink">
       {/* HERO */}
       <section className="relative pt-36 md:pt-44 pb-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_rgba(212,255,58,0.18),_transparent_55%)]" />
         <div className="max-w-7xl mx-auto">
           <Reveal>
             <span className="text-[10px] uppercase tracking-[0.28em] font-semibold text-mute">
@@ -103,13 +102,14 @@ export default function FeaturesPage() {
                 className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center"
               >
                 <Reveal className={`lg:col-span-6 ${flip ? "lg:order-2" : ""}`}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-line">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-line group transition-all duration-300 hover:shadow-[0_20px_60px_-40px_rgba(0,0,0,0.25)] hover:-translate-y-0.5">
                     <Image
                       src={m.image}
                       alt={m.title}
                       fill
+                      unoptimized
                       sizes="(min-width: 1024px) 45vw, 100vw"
-                      className="object-cover"
+                      className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02]"
                     />
                   </div>
                 </Reveal>
@@ -139,16 +139,16 @@ export default function FeaturesPage() {
           <Reveal>
             <div className="rounded-[2.5rem] bg-ink text-paper p-12 md:p-20 text-center">
               <h2 className="font-serif text-5xl md:text-7xl leading-[0.95] tracking-tight max-w-3xl mx-auto">
-                Ready to deploy <em className="italic text-lime">GymnexAI</em>?
+                Ready to deploy <em className="italic text-paper">GymnexAI</em>?
               </h2>
               <p className="mt-8 max-w-xl mx-auto text-paper/60 text-lg leading-relaxed">
                 A private 30-minute walkthrough — mapped to your operation.
               </p>
               <Link
                 href="/contact"
-                className="mt-10 inline-flex items-center gap-3 bg-paper text-ink px-8 py-4 rounded-full text-[12px] font-semibold tracking-[0.22em] uppercase hover:bg-paper-warm transition-colors"
+                className="mt-10 inline-flex items-center gap-3 bg-paper text-ink px-8 py-4 rounded-full text-[12px] font-semibold tracking-[0.22em] uppercase hover:bg-paper-warm transition-all duration-300 hover:-translate-y-0.5"
               >
-                Book a Demo <ArrowUpRight className="w-4 h-4" />
+                Book a Demo <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 duration-300" />
               </Link>
             </div>
           </Reveal>

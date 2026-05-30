@@ -9,8 +9,6 @@
   --color-mute-soft: #a8a8a0;
   --color-line: #e6e3da;
   --color-line-soft: #eeece4;
-  --color-lime: #d4ff3a;
-  --color-lime-soft: #eafcaf;
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-display), "GT Sectra", Georgia, "Times New Roman", serif;
@@ -114,7 +112,7 @@ select:focus-visible {
   will-change: transform;
 }
 
-/* Slow horizontal drift — used on the lime hero hairline */
+/* Soft border reveal animation — subtle gradient scroll */
 @keyframes shimmer {
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
@@ -147,7 +145,7 @@ select:focus-visible {
 
 /* Marker underline used by inline accents */
 .mark-lime {
-  background-image: linear-gradient(180deg, transparent 62%, var(--color-lime) 62%, var(--color-lime) 92%, transparent 92%);
+  background-image: linear-gradient(180deg, transparent 62%, var(--color-mute-soft) 62%, var(--color-mute-soft) 92%, transparent 92%);
 }
 
 /* Editorial scroll number */
