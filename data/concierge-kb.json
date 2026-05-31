@@ -8,17 +8,12 @@
     "suggested": [
       "What is GymnexAI?",
       "How does retention work?",
-      "What does it cost?",
-      "How long is onboarding?",
-      "Which gyms do you serve?",
-      "Do you handle WhatsApp?"
+      "How long is onboarding?"
     ],
     "teasers": [
       "How does retention work?",
-      "What does it cost?",
       "How long to go live?",
-      "Curious about WhatsApp?",
-      "Which gyms do you serve?"
+      "Curious about WhatsApp?"
     ]
   },
   "entries": [
@@ -48,7 +43,7 @@
         "What modules does it have?"
       ],
       "keywords": ["how", "works", "pillars", "features", "modules", "components", "system", "movements"],
-      "answer": "The system is composed in four movements. I — Retention Intelligence: foresight before farewell. II — Lead Conversion: an always-on concierge that closes inquiries on WhatsApp, Instagram and SMS. III — Operations Atelier: members, billing, attendance and trainers in one command surface. IV — Member Experience: personal programming and recovery delivered through the channels members already trust."
+      "answer": "The system is composed in four movements. I — Retention Intelligence: foresight before farewell. II — Lead Conversion: an always-on concierge that handles new lead enquiries on WhatsApp. III — Operations Atelier: members, billing, attendance and trainers in one command surface. IV — Member Experience: personal programming and recovery delivered through the channels members already trust."
     },
     {
       "id": "retention-intelligence",
@@ -71,12 +66,12 @@
       "questions": [
         "How do you handle leads?",
         "How does lead conversion work?",
-        "What about Instagram and WhatsApp inquiries?",
+        "What about WhatsApp inquiries?",
         "Can you reply to leads after hours?",
         "Do you book trials automatically?"
       ],
-      "keywords": ["lead", "leads", "inquiry", "inquiries", "conversion", "convert", "trial", "tour", "instagram", "whatsapp", "reply", "responds", "concierge"],
-      "answer": "Every inquiry — WhatsApp, Instagram DM, web form, missed call — receives a considered, immediate reply in your house voice. Tours scheduled, trials confirmed, objections handled, day or night. Median response time is under two minutes, twenty-four hours a day. Operators typically see lead → trial conversion lift by 62%."
+      "keywords": ["lead", "leads", "inquiry", "inquiries", "conversion", "convert", "trial", "tour", "whatsapp", "reply", "responds", "concierge"],
+      "answer": "GymnexAI helps gyms handle new lead enquiries coming through WhatsApp. When a potential member messages your gym, the system can respond quickly, clearly, and in your brand voice — so interested leads are not missed or left waiting."
     },
     {
       "id": "whatsapp",
@@ -86,11 +81,11 @@
         "Do you support WhatsApp?",
         "How does WhatsApp work with GymnexAI?",
         "Is WhatsApp integration native?",
-        "Can members message us on WhatsApp?",
+        "Can leads message us on WhatsApp?",
         "Is this a WhatsApp CRM?"
       ],
-      "keywords": ["whatsapp", "wa", "messaging", "chat", "concierge", "channel"],
-      "answer": "WhatsApp is the heart of the experience. We connect to the official WhatsApp Business API — verified sender, green-tick eligible — so every conversation, inbound or automated, runs through your verified number. Members and leads message you as they would a friend; the system replies with the same warmth, in your voice."
+      "keywords": ["whatsapp", "wa", "messaging", "chat", "concierge", "channel", "leads", "inquiries", "enquiries"],
+      "answer": "Yes. GymnexAI helps gyms handle new lead enquiries on WhatsApp. When someone messages to ask about pricing, timings, facilities, trials or membership details, the system replies quickly and clearly in your gym's voice."
     },
     {
       "id": "operations",
@@ -133,7 +128,7 @@
         "Is it subscription based?"
       ],
       "keywords": ["price", "pricing", "cost", "expensive", "cheap", "monthly", "fee", "subscription", "plan", "plans", "how much", "rates"],
-      "answer": "Pricing is composed around your operation — single location, multi-studio group, or franchise — and scales with active members. Most boutique operators land between ₹24,000 and ₹85,000 per month, with no per-seat fees for staff. We share a clean, single-page quote during your private demo. No long contracts; cancel any month."
+      "answer": "GymnexAI pricing depends on your gym's size, requirements, and the level of automation needed. The best way to understand the right setup is to book a private demo, where our team can walk you through the system and suggest the right plan."
     },
     {
       "id": "onboarding",
@@ -147,7 +142,7 @@
         "When can we start?"
       ],
       "keywords": ["onboard", "onboarding", "setup", "start", "live", "deploy", "deployment", "migrate", "migration", "transition", "implementation", "implement", "fast", "quick"],
-      "answer": "Most studios are live in seven to ten days. Our team handles data migration from your existing CRM or spreadsheets, verifies your WhatsApp Business number, calibrates the house voice with your founder, and trains the retention models on your last twelve months of activity. You're operating without us inside two weeks."
+      "answer": "Onboarding generally takes 7–14 days, depending on the gym's setup, data, WhatsApp Business readiness, and the level of customization required. Our goal is to get the system live smoothly without disturbing your existing operations."
     },
     {
       "id": "who-is-it-for",
@@ -161,7 +156,7 @@
         "Is this for franchises?"
       ],
       "keywords": ["who", "for", "fit", "studio", "boutique", "chain", "franchise", "club", "gym", "gyms", "size", "serve", "ideal", "right"],
-      "answer": "We're composed for considered fitness brands — boutique studios, premium gyms, performance clubs and multi-location groups that value craft over commodity. Operators typically run between 150 and 4,000 active members. If your members would notice a clumsy SMS, GymnexAI is built for you."
+      "answer": "GymnexAI is built for modern gyms, fitness clubs, and studios that want better retention, smarter operations, and a more premium member experience."
     },
     {
       "id": "data-privacy",
@@ -190,7 +185,7 @@
         "What integrations exist?"
       ],
       "keywords": ["integrate", "integration", "integrations", "connect", "tools", "stack", "mindbody", "stripe", "razorpay", "zapier", "calendar", "google", "existing"],
-      "answer": "Native connectors include Stripe, Razorpay, GoCardless, Google Calendar, Mindbody, Glofox, ABC Fitness, Meta (Instagram + WhatsApp Business), Apple Wallet pass, and webhooks for everything else. Most operators replace three to five tools; for what stays, we sync cleanly through API or Zapier."
+      "answer": "Native connectors include Stripe, Razorpay, GoCardless, Google Calendar, Mindbody, Glofox, ABC Fitness, Meta WhatsApp Business, Apple Wallet pass, and webhooks for everything else. Most operators replace three to five tools; for what stays, we sync cleanly through API or Zapier."
     },
     {
       "id": "multilingual",
